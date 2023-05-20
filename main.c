@@ -18,7 +18,7 @@ int main() {
     srand(n1 * 1000 + n2 * 100 + n3 * 10 + n4);
 
     n = 10 + n3;
-    double c = 1.0 - n3 * 0.01 - n4 * 0.005 - 0.25;
+    double c = 1.0 - n3 * 0.01 - n4 * 0.005 - 0.15;
     double **service_mat;
     service_mat = randm(n, n);
     int **rel_mat;
@@ -94,13 +94,10 @@ int main() {
 
                             break;
                         case 'd':
-                            //toask pointer at function as argument in function
 
                             if (d == 0) {
                                 redraw_x();
-                                //toask if v = 6
                                 DFS_clear(&stack, bones, visited_v, visited_graph, &k, &last_i);
-                                //BFS_clear(&queue, bones, visited_v, visited_graph, &k, &last_i);
                                 draw_graph(visited_graph, rel_mat, n, 1, 0);
                                 draw_graph_vertices(visited_graph, n);
                                 d = 1;

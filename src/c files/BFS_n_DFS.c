@@ -8,7 +8,7 @@ void DFS_clear(stack_node_t **stack, int **bones, int *visited_vertices, point_t
         for (int j = 0; j < n; j++)
             bones[i][j] = 0;
     }
-    int v = 6;//n * (double) rand() / RAND_MAX;
+    int v = n * (double) rand() / RAND_MAX;
     *k = 1;
     s_push(stack, v);
     visited_vertices[v] = *k;
@@ -59,9 +59,10 @@ void DFS_next_visit (int **rel_mat, int **bones, stack_node_t **stack, point_t *
 void DFS_done(int **bones, int *visited_vertices) {
     XSetForeground(dis, gc, 0xFFFFFF);
     XDrawString(dis, win, gc, 20, 20, "Done!", 5);
-    printf("Матриця обходу:\n");
+    printf("Матриця дерева обходу:\n");
     print_mat(bones, n, n);
-    //toask is correct to print vertices like this
+    printf("Зміна номерування вершин:\n");
+
     for (int i = 0; i < n; i++) {
         printf("%i -> %i\n", i + 1, visited_vertices[i]);
     }

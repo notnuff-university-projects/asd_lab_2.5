@@ -13,6 +13,7 @@ typedef struct {
     double y;
 } serv_point_t;
 //actual screen space has int values from 0 to screen width (height)
+
 typedef struct screen_space_point_t {
     int x;
     int y;

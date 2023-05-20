@@ -30,7 +30,9 @@ int **mat_create(int size1, int size2) {
 
 point_t *tri_graph_create(point_t *tar_graph, int graph_size) {
     double as_ratio = (double) SCREEN_HEIGHT / SCREEN_WIDTH;
+
     tar_graph = malloc(sizeof (point_t) * graph_size);
+
     serv_point_t *serv_points = malloc(sizeof (serv_point_t) * graph_size);
     double indent_x = (double) 100 / SCREEN_WIDTH;
     double indent_y = (double) 400 / SCREEN_HEIGHT;
